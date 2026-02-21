@@ -1,6 +1,6 @@
 # URL Shortener API
 
-A high-performance REST API for a URL shortening service.
+A high-performance REST API for a URL shortening service, using Nestjs, Prisma ORM and PostgreSQL.
 
 # Tech Stack
 * **Framework:** [NestJS](https://nestjs.com/) (TypeScript)
