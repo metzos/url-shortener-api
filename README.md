@@ -24,32 +24,32 @@ A high-performance REST API for a URL shortening service.
 * [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed and running
 
 ### 1. Clone the repository
-\`\`\`bash
+```bash
 git clone https://github.com/metzos/url-shortener-api.git
 cd url-shortener-api
-\`\`\`
+```
 
 ### 2. Install Dependencies
-\`\`\`bash
+```bash
 npm install
-\`\`\`
+```
 
 ### 3. Start the Database
 This will spin up a local PostgreSQL database using Docker.
-\`\`\`bash
+```bash
 docker compose up -d
-\`\`\`
+```
 
 ### 4. Setup Prisma
 Generate the Prisma Client and push the schema to the database.
-\`\`\`bash
+```bash
 npx prisma migrate dev
-\`\`\`
+```
 
 ### 5. Start the Server
-\`\`\`bash
+```bash
 npm run start:dev
-\`\`\`
+```
 The API will now be running on `http://localhost:3000`.
 
 ---
@@ -62,14 +62,14 @@ The API will now be running on `http://localhost:3000`.
 Expects a valid URL in the request body. Unrecognized properties or invalid web addresses will be rejected with a `400 Bad Request`.
 
 **Request Body:**
-\`\`\`json
+```json
 {
   "url": "https://www.google.com"
 }
-\`\`\`
+```
 
 **Response:**
-\`\`\`json
+```json
 {
   "id": 1,
   "originalUrl": "https://www.google.com",
@@ -77,7 +77,7 @@ Expects a valid URL in the request body. Unrecognized properties or invalid web 
   "clicks": 0,
   "createdAt": "2026-02-21T12:00:00.000Z"
 }
-\`\`\`
+```
 
 ---
 
@@ -87,7 +87,7 @@ Expects a valid URL in the request body. Unrecognized properties or invalid web 
 Looks up the short code, safely increments the total `clicks` counter by 1 in the database, and performs an HTTP `302` redirect to the original web address.
 
 **Example Request:**
-\`http://localhost:3000/link8243\`
+`http://localhost:3000/link8243`
 
 ---
 
@@ -97,10 +97,10 @@ Looks up the short code, safely increments the total `clicks` counter by 1 in th
 Retrieves the current data for a short link (including total clicks) *without* incrementing the click counter.
 
 **Example Request:**
-\`http://localhost:3000/stats/link8243\`
+`http://localhost:3000/stats/link8243`
 
 **Response:**
-\`\`\`json
+```json
 {
   "id": 1,
   "originalUrl": "https://www.google.com",
@@ -108,4 +108,4 @@ Retrieves the current data for a short link (including total clicks) *without* i
   "clicks": 14,
   "createdAt": "2026-02-21T12:00:00.000Z"
 }
-\`\`\`
+```
