@@ -8,7 +8,7 @@ A high-performance REST API for a URL shortening service.
 * **ORM:** [Prisma](https://www.prisma.io/) (v7)
 * **Validation:** `class-validator` & `class-transformer`
 
-## ✨ Features
+## Features
 
 * **Link Generation:** Converts long, unwieldy URLs into short, trackable links.
 * **Instant Redirection:** Quickly forwards users from the short link to the original destination.
@@ -17,7 +17,7 @@ A high-performance REST API for a URL shortening service.
 
 ---
 
-## 🛠️ How to Run Locally
+## How to Run Locally
 
 ### Prerequisites
 * [Node.js](https://nodejs.org/) installed
@@ -25,7 +25,7 @@ A high-performance REST API for a URL shortening service.
 
 ### 1. Clone the repository
 \`\`\`bash
-git clone https://github.com/YOUR_USERNAME/url-shortener-api.git
+git clone https://github.com/metzos/url-shortener-api.git
 cd url-shortener-api
 \`\`\`
 
@@ -54,7 +54,7 @@ The API will now be running on `http://localhost:3000`.
 
 ---
 
-## 📡 API Endpoints
+## API Endpoints
 
 ### 1. Create a Short URL
 **POST** `/shorten`
